@@ -3,3 +3,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities{
+    .hover-underline{
+        @apply relative inline
+    }
+
+    .hover-underline::before{
+        @apply content-[''] absolute left-0 bottom-0 w-0 h-[3px] bg-blue-700 transition-all duration-300 ease-in-out
+    }
+
+    .hover-underline:hover::before{
+        @apply w-full
+    }
+
+    .mobile-menu{
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        padding: 1rem; 
+        clip-path: circle(0px at 95% 5%);
+        background-color: blue;
+        transition: all 1s linear;
+        color: #fff;
+    }
+
+    .mobile-menu-open{
+        clip-path: circle(1200px at 100% -8%);
+    }
+}

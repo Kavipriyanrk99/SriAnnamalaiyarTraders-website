@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SAT</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/796e5e0da8.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1 class="text-slate-500 text-4xl">SAT</h1>
+<body class="scroll-smooth min-h-screen bg-white font-serif">
+    <header class="sticky top-0 z-20">
+        <section class="max-w-7xl mx-auto flex justify-between items-center text-xl px-4 py-8 font-openSans">
+            <h1 class="font-sans font-bold tracking-widest">
+                Sri Annamalaiyar Traders
+            </h1>
+            <div class="font-semibold text-base ">
+                <button id="hamburgerBtn" class="md:hidden flex text-xl"><i class="fa-solid fa-bars"></i></button>
+                <nav class="md:flex hidden">
+                    <a href="#" class="mx-3 px-1 py-1.5 text-slate-500 hover:text-blue-700 hover-underline">Home</a>
+                    <a href="#" class="mx-3 px-1 py-1.5 text-slate-500 hover:text-blue-700 hover-underline">Products</a>
+                    <a href="#" class="mx-3 px-1 py-1.5 text-slate-500 hover:text-blue-700 hover-underline">About Us</a>
+                    <button class="px-4 py-1.5 text-white bg-blue-700 rounded-xl active:bg-blue-600">Contact Us</button>
+                </nav>
+            </div>
+        </section>
+        <section id="mobile-menu" class="mobile-menu">
+            <button class="absolute top-8 right-4 text-2xl font-bold"><i class="fa-solid fa-xmark"></i></button>
+            <nav id="mobile-menu-nav" class="flex flex-col items-center min-h-screen mt-20 font-openSans" aria-label="mobile">
+                <a href="#" class="py-4 text-xl font-semibold opacity-0 transition-all duration-1000 ease-linear delay-0">Home</a>
+                <a href="#" class="py-4 text-xl font-semibold opacity-0 transition-all duration-1000 ease-linear delay-150">Products</a>
+                <a href="#" class="py-4 text-xl font-semibold opacity-0 transition-all duration-1000 ease-linear delay-300">About Us</a>
+                <a href="#" class="py-4 text-xl font-semibold opacity-0 transition-all duration-1000 ease-linear delay-700">Contact Us</a>
+            </nav>
+        </section>
+    </header>
 </body>
 </html>
