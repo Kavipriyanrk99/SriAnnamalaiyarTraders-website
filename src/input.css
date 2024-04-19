@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Open+Sans&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Open+Sans&family=Oswald&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -31,5 +31,27 @@
 
     .mobile-menu-open{
         clip-path: circle(1200px at 100% -8%);
+    }
+    
+    .btn-link:hover i{
+        @apply translate-x-1
+    }
+
+    @keyframes slide1 {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+    }
+    
+    @keyframes slide2 {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-130%);
+        }
     }
 }

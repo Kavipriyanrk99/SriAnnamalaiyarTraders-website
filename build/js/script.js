@@ -13,6 +13,17 @@ const initApp = () => {
 
     hamburgerBtn.addEventListener('click', toggleMenu);
     mobileMenu.addEventListener('click', toggleMenu);
+
+    document.addEventListener('scroll', function () {
+        var navbar = document.getElementById('navbar');
+        var scrollY = window.scrollY;
+
+        if (scrollY > 20) {
+            navbar.classList.add('shadow-md');
+        } else {
+            navbar.classList.remove('shadow-md');
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
