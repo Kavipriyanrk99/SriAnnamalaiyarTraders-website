@@ -590,6 +590,11 @@ video {
   margin-right: auto;
 }
 
+.my-3{
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .ml-0{
   margin-left: 0px;
 }
@@ -620,6 +625,10 @@ video {
 
 .mt-7{
   margin-top: 1.75rem;
+}
+
+.ml-1{
+  margin-left: 0.25rem;
 }
 
 .inline-block{
@@ -660,6 +669,10 @@ video {
 
 .w-\[19rem\]{
   width: 19rem;
+}
+
+.w-1\/2{
+  width: 50%;
 }
 
 .max-w-7xl{
@@ -717,6 +730,10 @@ video {
 
 .whitespace-nowrap{
   white-space: nowrap;
+}
+
+.break-words{
+  overflow-wrap: break-word;
 }
 
 .rounded-2xl{
@@ -1050,6 +1067,10 @@ video {
 
   .md\:mt-28{
     margin-top: 7rem;
+  }
+
+  .md\:block{
+    display: block;
   }
 
   .md\:inline-block{
