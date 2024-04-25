@@ -63,6 +63,8 @@ app.get('/tnpl-radiant-stationery(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'build', 'tnpl-radiant-stationery.html'));
 })
 
+app.use('/email', require('./routes/email'));
+
 app.all('*', (req, res)=>{
     res.sendStatus(404);
 })
@@ -70,7 +72,8 @@ app.all('*', (req, res)=>{
 app.use(errorHandler);
 
 pool
-    .then(pool => {
+    .then(() => {
+        console.log('MySQL connection pool created');
         app.listen(PORT, () => { console.log(`server is running at port ${PORT}`)});
     })
     .catch(error => {
