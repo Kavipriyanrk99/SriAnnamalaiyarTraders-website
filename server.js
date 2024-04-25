@@ -9,6 +9,8 @@ const { errorHandler } = require('./middleware/errHandler');
 
 const PORT = process.env.PORT || 5500;
 
+const pool = require('./config/dbConnection').getPool();
+
 app.use(logger);
 
 app.use(express.urlencoded({ extended : false}));
@@ -67,4 +69,11 @@ app.all('*', (req, res)=>{
 
 app.use(errorHandler);
 
-app.listen(PORT, () => { console.log(`server is running at port ${PORT}`)});
+pool
+    .then(pool => {
+        app.listen(PORT, () => { console.log(`server is running at port ${PORT}`)});
+    })
+    .catch(error => {
+        console.error('Error creating MySQL connection pool:', error);
+        process.exit(1);
+    })
