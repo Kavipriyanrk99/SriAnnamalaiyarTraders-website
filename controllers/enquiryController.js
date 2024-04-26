@@ -1,5 +1,6 @@
 const { getPool } = require('../config/dbConnection');
 const { isValidEmail, isValidPhoneNumber } = require('../utils/fieldValidation');
+const { sendEmail } = require('../utils/sendEmail');
 
 const addEmail = async(req, res) => {
     if(!req.body.full_name?.trim() || !req.body.phone_number?.trim() || !req.body.company_name?.trim() || !req.body.email_address?.trim() || !req.body.email_subject?.trim() || !req.body.email_message?.trim() || !req.body.newsletter_check?.trim()){
@@ -31,6 +32,33 @@ const addEmail = async(req, res) => {
 
         await connection.execute(query, values);
         connection.release();
+
+        const message = `<h1><b>Enquiry from client</b></h1>
+
+                        <h3>Client Name:</h3>
+                        <p>${full_name}</p>
+
+                        <h3>Email Address:</h3>
+                        <a href="mailto:${email_address}">${email_address}</a>
+                         
+                        <h3>Phone Number:</h3>
+                        <a href="tel:${phone_number}">${phone_number}</a>
+
+
+                        <h3>Company Name:</h3>
+                        <p>${company_name}</p>
+
+                        <hr/>
+                        
+                        <h3>Subject:</h3>
+                        <p>${email_subject}</p>
+                        
+                        <h3>Message:</h3>
+                        <p>${email_message}</p>
+                        
+                        <h4>${new Date()}</h4>`;
+
+        sendEmail(email_subject, message);
       
         res.status(201).json({ 'message': `enquiry message sent!`});
     } catch (error) {
