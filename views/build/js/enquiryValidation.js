@@ -15,6 +15,8 @@ const enquiryValidation_initApp = () => {
     const subject_warnTxt = enquiryForm.querySelector("#subject-warnTxt");
     const email_warnTxt = enquiryForm.querySelector("#email-warnTxt");
     const message_warnTxt = enquiryForm.querySelector("#message-warnTxt");
+    const successTxt = enquiryForm.querySelector("#successTxt");
+    const errTxt = enquiryForm.querySelector("#errTxt");
 
     // validation
     const handleName = () => {
@@ -105,9 +107,8 @@ const enquiryValidation_initApp = () => {
                 'newsletter_check' : newsletter_check.value
             }
 
-            console.log(data);
             try{
-                const response = await fetch("/", {
+                const response = await fetch("/email", {
                     method: "POST",
                     credentials: "same-origin",
                     headers: {
@@ -117,12 +118,30 @@ const enquiryValidation_initApp = () => {
                 });
 
                 if(response.ok){
+                    const data = await response.json();
+                    console.log(data.message);
 
+                    successTxt.classList.toggle("hidden");
+                    setTimeout(() => {
+                        successTxt.classList.toggle("hidden");
+                    }, 5000);
                 } else{
-
+                    errTxt.classList.toggle("hidden");
+                    setTimeout(() => {
+                        errTxt.classList.toggle("hidden");
+                    }, 5000);
+                    throw new Error("Network response was not OK");
                 }
             } catch(error){
                 console.error("Error:", error);
+            } finally{
+                full_name.value = "";
+                phone_number.value = "";
+                company_name.value = "";
+                email_address.value = "";
+                email_message.value = "";
+                email_subject.value = "";
+                newsletter_check.checked = false;
             }
 
         } else{
