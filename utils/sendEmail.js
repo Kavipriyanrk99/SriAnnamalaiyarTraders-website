@@ -17,7 +17,7 @@ const sendEmail = async(subject, body) => {
             from: process.env.SMTP_USER,
             to: process.env.SMTP_TO_ADDRESS,
             subject: subject,
-            text: body
+            html: body
         });
 
         console.log(`Message sent: ${info.messageId}`);
