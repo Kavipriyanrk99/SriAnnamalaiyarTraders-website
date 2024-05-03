@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../login.js" defer></script>
+</head>
+<body class="min-h-screen bg-white font-serif">
+   <main class="min-h-screen">
+        <section class="min-h-screen flex flex-col justify-center items-center">
+           <form id="login-form" class="w-[420px] p-10 mt-8">
+                <h1 class="text-center font-sourceSans block uppercase tracking-wide text-black text-xl font-bold mb-8">ADMIN</h1>
+                <p id="errTxt" class="font-sourceSans text-center text-red-500 hidden"><i class="fa-regular fa-circle-xmark font-bold"></i> something went wrong</p>
+                <div class="w-full px-3 mb-6">
+                    <label class="font-sourceSans block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="email-address">
+                        Email 
+                    </label>
+                    <input
+                        class="font-serif text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="email-address" type="email" name="email-address">
+                    <p id="email-warnTxt" class="text-red-500 text-xs italic"></p>
+                </div>
+                <div class="w-full px-3 mb-6">
+                    <label class="font-sourceSans block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="password">
+                        Password 
+                    </label>
+                    <input
+                        class="font-serif text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="password" type="password" name="password">
+                    <p id="password-warnTxt" class="text-red-500 text-xs italic"></p>
+                </div>
+                <div class="flex justify-center -mx-3 mb-6">
+                    <button
+                        id="login-btn"
+                        class="px-4 py-1.5 font-sourceSans font-semibold text-white bg-blue-700 rounded-2xl active:bg-blue-600"
+                        type="submit">
+                        Login 
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
