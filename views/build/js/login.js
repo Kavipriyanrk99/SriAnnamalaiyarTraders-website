@@ -6,7 +6,6 @@ const initApp = () => {
 
     const email_warnTxt = loginForm.querySelector("#email-warnTxt");
     const password_warnTxt = loginForm.querySelector("#password-warnTxt");
-    const successTxt = loginForm.querySelector("#successTxt");
     const errTxt = loginForm.querySelector("#errTxt");
 
     // validation
@@ -59,11 +58,7 @@ const initApp = () => {
                 if(response.ok){
                     const data = await response.json();
                     console.log(data.message);
-
-                    successTxt.classList.toggle("hidden");
-                    setTimeout(() => {
-                        successTxt.classList.toggle("hidden");
-                    }, 5000);
+                    window.location.href = '/auth/email';
                 } else{
                     errTxt.classList.toggle("hidden");
                     setTimeout(() => {
