@@ -4,6 +4,7 @@ const app = express();
 const fsPromises = require('fs').promises;
 const path = require('path');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const { logger } = require('./middleware/logEvents');
 const { errorHandler } = require('./middleware/errHandler');
 
@@ -13,6 +14,7 @@ const pool = require('./config/dbConnection').getPool();
 
 app.use(logger);
 
+app.use(cookieParser());
 app.use(express.urlencoded({ extended : false}));
 app.use(express.json());
 app.use('/', express.static(path.join(__dirname, 'views', 'build', 'css')));
