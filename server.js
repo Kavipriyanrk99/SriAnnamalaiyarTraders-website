@@ -65,6 +65,8 @@ app.get('/tnpl-radiant-stationery(.html)?', (req, res) => {
 
 app.use('/email', require('./routes/email'));
 
+app.use('/admin', require('./routes/admin'));
+
 app.all('*', (req, res)=>{
     res.sendStatus(404);
 })
