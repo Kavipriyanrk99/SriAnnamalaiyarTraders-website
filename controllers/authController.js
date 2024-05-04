@@ -17,7 +17,7 @@ const handleLogin = async(req, res) => {
     if(match){
         const token = jwt.sign({
             "email_address" : process.env.ADMIN_EMAIL
-        }, process.env.TOKEN_SECRET, { expiresIn : '30s'})
+        }, process.env.TOKEN_SECRET, { expiresIn : '1d'})
 
         res.cookie('jwt', token, { httpOnly : true, secure : false, sameSite : 'Strict', maxAge : 24 * 60 * 60 * 1000 });
         return res.status(201).json({ 'message': `authorized!`});
