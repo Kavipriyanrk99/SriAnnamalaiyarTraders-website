@@ -19,9 +19,8 @@ const handleLogin = async(req, res) => {
             "email_address" : process.env.ADMIN_EMAIL
         }, process.env.TOKEN_SECRET, { expiresIn : '30s'})
 
-        res.cookie('jwt', token, { httpOnly : true, secure : true, sameSite : 'None', maxAge : 30 * 1000 });
-
-        res.status(201).json({ 'message': `authorized!`});
+        res.cookie('jwt', token, { httpOnly : true, secure : false, sameSite : 'Strict', maxAge : 30 * 1000 });
+        return res.status(201).json({ 'message': `authorized!`});
     } else{
         return res.status(401).json({ 'message': 'unauthorized!'});
     }
