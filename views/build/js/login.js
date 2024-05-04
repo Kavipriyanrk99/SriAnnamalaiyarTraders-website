@@ -58,7 +58,7 @@ const initApp = () => {
                 if(response.ok){
                     const data = await response.json();
                     console.log(data.message);
-                    window.location.href = '/auth/email';
+                    window.location.href += '/inbox';
                 } else{
                     errTxt.classList.toggle("hidden");
                     setTimeout(() => {
