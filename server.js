@@ -21,6 +21,10 @@ app.use('/', express.static(path.join(__dirname, 'views', 'build', 'css')));
 app.use('/', express.static(path.join(__dirname, 'views', 'build', 'js')));
 app.use('/', express.static(path.join(__dirname, 'views', 'build', 'assets')));
 
+app.use('/email', require('./routes/email'));
+
+app.use('/admin', require('./routes/admin'));
+
 app.get(`^(/|/index(.html)?)$`, (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'build', 'index.html'));
 })
@@ -64,10 +68,6 @@ app.get('/tnpl-radiant-platinum(.html)?', (req, res) => {
 app.get('/tnpl-radiant-stationery(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'build', 'tnpl-radiant-stationery.html'));
 })
-
-app.use('/email', require('./routes/email'));
-
-app.use('/admin', require('./routes/admin'));
 
 app.all('*', (req, res)=>{
     res.sendStatus(404);
