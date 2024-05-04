@@ -7,7 +7,7 @@ const { verifyToken } = require('../middleware/verifyToken');
 
 router.route('/inbox')
     .get(verifyToken, (req, res) => {
-        res.send('<p>successful redirection</p>')
+        res.sendFile(path.join(__dirname, '..', 'views', 'build', 'inbox.html'));
     });
 
 router.route('/auth')
