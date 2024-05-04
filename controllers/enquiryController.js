@@ -66,4 +66,20 @@ const addEmail = async(req, res) => {
     }
 }
 
-module.exports = { addEmail}
+const getEmails = async(req, res) => {
+    try {
+        const pool = await getPool();
+        const connection = await pool.getConnection();
+
+        const query = 'SELECT `id`,`email_address`, `email_subject`, `email_message` FROM `enquiry_email`';
+
+        const [rows, fields] = await connection.execute(query);
+        connection.release();
+
+        res.status(201).json(rows);
+    } catch (error) {
+        res.status(500).json({ 'message': error.message});
+    }
+}
+
+module.exports = { addEmail, getEmails};
