@@ -83,11 +83,11 @@ const getEmails = async(req, res) => {
 }
 
 const getEmail = async(req, res) => {
-    if(!req.query?.id){
+    if(!req.params?.id){
         return res.status(400).json({ 'message': 'invalid id!'});
     }
 
-    const id = req.query.id;
+    const id = req.params.id;
 
     try {
         const pool = await getPool();

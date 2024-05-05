@@ -15,10 +15,7 @@ router.route('/auth')
 
 router.route('/inbox/:id')
     .get(verifyToken, (req, res) => {
-        if(!req.query?.id)
-            return res.sendFile(path.join(__dirname, '..', 'views', 'build', 'emailView.html'));
-
-        enquiryController.getEmail(req, res);
+        res.sendFile(path.join(__dirname, '..', 'views', 'build', 'emailView.html'));
     });
 
 router.get('/', (req, res) => {
