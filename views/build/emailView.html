@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="md:scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../emailView.js" defer></script>
+    <script src="https://kit.fontawesome.com/796e5e0da8.js" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen bg-white font-serif">
+    <header id="navbar" class="sticky top-0 z-20 bg-white">
+        <section class="max-w-7xl mx-auto flex justify-between items-center text-xl px-4 py-6 font-openSans">
+            <h1 class="font-sourceSans font-bold">
+                Sri Annamalaiyar Traders
+            </h1>
+            <p class="text-blue-700 font-sourceSans font-bold md:leading-snug"><i class="fa-solid fa-envelope mr-2"></i>Inbox</p>
+        </section>
+    </header>
+    <main>
+        <section id="viewSection" class="hidden max-w-7xl mx-auto px-4 py-8 md:mt-28 mt-12 flex-col gap-8 scroll-mt-28">
+            <article class="w-full p-4 shadow-[0_3px_10px_rgb(0,0,0,0.2)] ">
+                <h3 class="font-sourceSans font-bold text-xl text-left mx-auto">From:</h3>
+                <p id="from-email-address" class="w-full text-left text-sm text-gray-500 mb-3 px-4"></p>
+
+                <h3 class="font-sourceSans font-bold text-xl text-left mx-auto">Subject:</h3>
+                <p id="email-subject" class="w-full text-left text-sm text-gray-500 mb-3 px-4"></p>
+                
+                <h3 class="font-sourceSans font-bold text-xl text-left mx-auto">Body:</h3>
+                <p id="email-message" class="w-full text-left text-sm text-gray-500 mb-3 px-4"></p>
+
+                <h3 class="font-sourceSans font-bold text-xl text-left mx-auto">Contact:</h3>
+                <div class="border-t border-gray-200 md:w-fit w-full mt-4">
+                    <dl>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="font-sourceSans text-sm font-medium text-gray-500">
+                                Full name
+                            </dt>
+                            <dd id="full-name" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="font-sourceSans text-sm font-medium text-gray-500">
+                                Email address
+                            </dt>
+                            <dd id="email-address" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="font-sourceSans text-sm font-medium text-gray-500">
+                                Company Name
+                            </dt>
+                            <dd id="company-name" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="font-sourceSans text-sm font-medium text-gray-500">
+                                Phone Number 
+                            </dt>
+                            <dd id="phone-number" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
