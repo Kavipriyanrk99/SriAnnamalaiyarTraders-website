@@ -82,4 +82,29 @@ const getEmails = async(req, res) => {
     }
 }
 
-module.exports = { addEmail, getEmails};
+const getEmail = async(req, res) => {
+    if(!req.query?.id){
+        return res.status(400).json({ 'message': 'invalid id!'});
+    }
+
+    const id = req.query.id;
+
+    try {
+        const pool = await getPool();
+        const connection = await pool.getConnection();
+
+        const query = 'SELECT * FROM `enquiry_email` WHERE `id` = ?';
+
+        const [rows, fields] = await connection.execute(query, [id]);
+        connection.release();
+
+        if(rows.length == 0)
+            return res.status(400).json({ 'message': `id ${id} not found!`});
+
+        return res.status(201).json(rows);
+    } catch (error) {
+        res.status(500).json({ 'message': error.message});
+    }
+}
+
+module.exports = { addEmail, getEmails, getEmail};
