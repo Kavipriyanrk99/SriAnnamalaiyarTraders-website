@@ -536,6 +536,18 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .absolute{
   position: absolute;
 }
@@ -704,6 +716,10 @@ video {
   height: 3.5rem;
 }
 
+.h-6{
+  height: 1.5rem;
+}
+
 .h-\[19rem\]{
   height: 19rem;
 }
@@ -718,6 +734,10 @@ video {
 
 .w-1\/2{
   width: 50%;
+}
+
+.w-6{
+  width: 1.5rem;
 }
 
 .w-8{
@@ -736,9 +756,8 @@ video {
   width: 100%;
 }
 
-.w-fit{
-  width: -moz-fit-content;
-  width: fit-content;
+.max-w-5xl{
+  max-width: 64rem;
 }
 
 .max-w-7xl{
@@ -817,6 +836,10 @@ video {
   gap: 1rem;
 }
 
+.gap-6{
+  gap: 1.5rem;
+}
+
 .gap-8{
   gap: 2rem;
 }
@@ -864,10 +887,6 @@ video {
 
 .border-8{
   border-width: 8px;
-}
-
-.border-2{
-  border-width: 2px;
 }
 
 .border-b-2{
@@ -963,6 +982,11 @@ video {
 .py-1\.5{
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
+}
+
+.py-16{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .py-3{
@@ -1133,6 +1157,21 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-slate-100{
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249 / var(--tw-text-opacity));
+}
+
+.text-slate-200{
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+}
+
+.text-slate-400{
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
 .opacity-0{
   opacity: 0;
 }
@@ -1162,6 +1201,14 @@ video {
 .blur{
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .transition-all{
@@ -1278,6 +1325,10 @@ video {
 .hover\:text-blue-700:hover{
   --tw-text-opacity: 1;
   color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue-700\/75:hover{
+  color: rgb(29 78 216 / 0.75);
 }
 
 .focus\:border-gray-500:focus{
@@ -1430,5 +1481,16 @@ video {
 
   .md\:leading-snug{
     line-height: 1.375;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:gap-12{
+    gap: 3rem;
+  }
+
+  .lg\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
